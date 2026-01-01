@@ -80,7 +80,7 @@ A Relay Stage MUST be in exactly one of the following states:
            | (responsibility accepted)
            v
     +---------------+
-    |  InProgress  |
+    |  InProgress   |
     +---------------+
            |
            | (responsibility released)
