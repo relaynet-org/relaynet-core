@@ -41,9 +41,8 @@ A Relay Task MUST be in exactly one of the following states:
         +----------------+
            |          |
            |          |
-(successful) | | (failure)
-completion | |
-v v
+(successful) | | (failure)completion | |
+             v v
 +-------------+ +-----------+
 | Completed | | Failed |
 +-------------+ +-----------+
@@ -108,7 +107,9 @@ sequential Relay Stages within a Relay Task.
 Time ─────────────────────────────────────────────>
 
 Participant A: [==== Stage 1 (InProgress) ====]
+
 Participant B: [==== Stage 2 (InProgress) ====]
+
 Participant C: [==== Stage 3 (InProgress) ====]
 
 
@@ -130,9 +131,13 @@ MUST be accompanied by an **Auditable Event**.
 ### Conceptual mapping
 
 StageAccepted : Pending → InProgress
+
 StageReleased : InProgress → Released
+
 TaskCompleted : Active → Completed
+
 TaskFailed : Active → Failed
+
 
 
 Auditable Events record **facts**, not interpretations.
