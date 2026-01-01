@@ -30,22 +30,22 @@ A Relay Task MUST be in exactly one of the following states:
 
 ### 1.2 State diagram (illustrative)
 
-        +----------------+
-        |  Initialized   |
-        +----------------+
-                 |
-                 | (task starts)
-                 v
-        +----------------+
-        |     Active     |
-        +----------------+
-           |          |
-           |          |
-(successful) | | (failure)completion | |
-             v v
-+-------------+ +-----------+
-| Completed | | Failed |
-+-------------+ +-----------+
+                ┌──────────────┐
+                │  Initialized │
+                └──────────────┘
+                         │
+                         │ task starts
+                         ▼
+                ┌──────────────┐
+                │    Active    │
+                └──────────────┘
+                   │        │
+      successful   │        │    failure
+      completion   │        │
+                   ▼        ▼
+           ┌────────────┐  ┌──────────┐
+           │  Completed │  │  Failed  │
+           └────────────┘  └──────────┘
 
 
 ---
